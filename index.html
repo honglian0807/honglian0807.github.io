@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GitHub Pages 静态网站测试页">
+  <title>GitHub Pages 测试站</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#121a2f;
+      --text:#eef4ff;
+      --muted:#a8b3cf;
+      --line:#26304a;
+      --accent:#7dd3fc;
+      --accent2:#c4b5fd;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(125,211,252,.12), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(196,181,253,.12), transparent 30%),
+        var(--bg);
+      color:var(--text);
+      min-height:100vh;
+    }
+    .wrap{width:min(1100px,calc(100% - 32px));margin:auto}
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:24px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .brand{font-weight:800;letter-spacing:-.4px}
+    .badge{
+      font-size:13px;
+      padding:7px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      background:rgba(255,255,255,.03);
+    }
+    .hero{
+      padding:96px 0 64px;
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:36px;
+      align-items:center;
+    }
+    h1{
+      font-size:clamp(42px,8vw,78px);
+      line-height:1;
+      margin:0 0 24px;
+      letter-spacing:-2.5px;
+    }
+    h1 span{
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:20px;
+      line-height:1.8;
+      max-width:700px;
+      margin:0;
+    }
+    .card{
+      background:rgba(18,26,47,.8);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:0 25px 80px rgba(0,0,0,.25);
+    }
+    .card h2{margin:0 0 18px;font-size:20px}
+    .flow{display:grid;gap:12px}
+    .step{
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.025);
+    }
+    .arrow{text-align:center;color:#64748b}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      padding:0 0 72px;
+    }
+    .feature{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      background:rgba(255,255,255,.025);
+    }
+    .feature b{display:block;margin-bottom:8px}
+    .feature p{margin:0;color:var(--muted);line-height:1.7}
+    footer{
+      border-top:1px solid rgba(255,255,255,.08);
+      color:#72809e;
+      padding:24px 0 40px;
+      font-size:14px;
+    }
+    code{
+      color:#d9f7ff;
+      background:#0d1427;
+      border:1px solid var(--line);
+      padding:2px 6px;
+      border-radius:6px;
+    }
+    @media(max-width:800px){
+      .hero{grid-template-columns:1fr;padding-top:64px}
+      .grid{grid-template-columns:1fr}
+      header{align-items:flex-start;gap:12px;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">GitHub Pages Demo</div>
+      <div class="badge">免费静态网站 · 无阿里云服务器参与</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>这个网页，<br><span>直接由 GitHub 提供。</span></h1>
+        <p class="lead">
+          这是一个真实的 GitHub Pages 静态网站测试页。页面文件保存在 GitHub 仓库里，
+          不经过你的 Ubuntu、Nginx 或 <code>/pinzhigao</code> 目录。
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>访问链路</h2>
+        <div class="flow">
+          <div class="step">你的浏览器</div>
+          <div class="arrow">↓</div>
+          <div class="step">GitHub Pages</div>
+          <div class="arrow">↓</div>
+          <div class="step">仓库里的 index.html</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="feature">
+        <b>静态托管</b>
+        <p>HTML、CSS、JavaScript 和图片可以直接对外访问。</p>
+      </div>
+      <div class="feature">
+        <b>自动 HTTPS</b>
+        <p>GitHub Pages 默认提供 HTTPS，不需要自己配置 Nginx 证书。</p>
+      </div>
+      <div class="feature">
+        <b>版本记录</b>
+        <p>每次修改都可以保留 Commit 历史，出问题时方便回退。</p>
+      </div>
+    </section>
+
+    <footer>
+      zhangyixinovo-lang.github.io · GitHub Pages demonstration
+    </footer>
+  </div>
+</body>
+</html>
