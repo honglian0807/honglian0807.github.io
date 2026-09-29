@@ -3,168 +3,369 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GitHub Pages 静态网站测试页">
-  <title>GitHub Pages 测试站</title>
+  <meta name="description" content="我的常用网站与工具收藏夹">
+  <title>我的工具收藏夹</title>
   <style>
     :root{
-      --bg:#0b1020;
-      --card:#121a2f;
-      --text:#eef4ff;
-      --muted:#a8b3cf;
-      --line:#26304a;
-      --accent:#7dd3fc;
-      --accent2:#c4b5fd;
+      --bg:#f5f7fb;
+      --surface:#ffffff;
+      --surface2:#f9fbff;
+      --text:#172033;
+      --muted:#718096;
+      --line:#e4e8f0;
+      --accent:#4468e8;
+      --accent-soft:#eef2ff;
+      --shadow:0 10px 35px rgba(28,39,65,.08);
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(125,211,252,.12), transparent 30%),
-        radial-gradient(circle at 80% 10%, rgba(196,181,253,.12), transparent 30%),
-        var(--bg);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
       color:var(--text);
+      background:
+        radial-gradient(circle at 0 0, rgba(68,104,232,.08), transparent 28%),
+        var(--bg);
       min-height:100vh;
     }
-    .wrap{width:min(1100px,calc(100% - 32px));margin:auto}
+    a{color:inherit}
+    .wrap{width:min(1180px,calc(100% - 32px));margin:auto}
     header{
+      padding:44px 0 28px;
+    }
+    .topline{
       display:flex;
       justify-content:space-between;
-      align-items:center;
-      padding:24px 0;
-      border-bottom:1px solid rgba(255,255,255,.08);
+      gap:20px;
+      align-items:flex-start;
     }
-    .brand{font-weight:800;letter-spacing:-.4px}
-    .badge{
+    .eyebrow{
+      color:var(--accent);
       font-size:13px;
-      padding:7px 10px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      color:var(--muted);
-      background:rgba(255,255,255,.03);
-    }
-    .hero{
-      padding:96px 0 64px;
-      display:grid;
-      grid-template-columns:1.25fr .75fr;
-      gap:36px;
-      align-items:center;
+      font-weight:750;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:10px;
     }
     h1{
-      font-size:clamp(42px,8vw,78px);
-      line-height:1;
-      margin:0 0 24px;
-      letter-spacing:-2.5px;
-    }
-    h1 span{
-      background:linear-gradient(90deg,var(--accent),var(--accent2));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .lead{
-      color:var(--muted);
-      font-size:20px;
-      line-height:1.8;
-      max-width:700px;
       margin:0;
+      font-size:clamp(36px,6vw,58px);
+      letter-spacing:-1.8px;
+      line-height:1.05;
     }
-    .card{
-      background:rgba(18,26,47,.8);
+    .subtitle{
+      margin:14px 0 0;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.7;
+      max-width:760px;
+    }
+    .count{
+      flex:none;
       border:1px solid var(--line);
-      border-radius:22px;
-      padding:28px;
-      box-shadow:0 25px 80px rgba(0,0,0,.25);
-    }
-    .card h2{margin:0 0 18px;font-size:20px}
-    .flow{display:grid;gap:12px}
-    .step{
-      padding:14px 16px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:rgba(255,255,255,.025);
-    }
-    .arrow{text-align:center;color:#64748b}
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      padding:0 0 72px;
-    }
-    .feature{
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:22px;
-      background:rgba(255,255,255,.025);
-    }
-    .feature b{display:block;margin-bottom:8px}
-    .feature p{margin:0;color:var(--muted);line-height:1.7}
-    footer{
-      border-top:1px solid rgba(255,255,255,.08);
-      color:#72809e;
-      padding:24px 0 40px;
+      background:rgba(255,255,255,.78);
+      border-radius:16px;
+      padding:14px 18px;
+      box-shadow:var(--shadow);
+      color:var(--muted);
       font-size:14px;
     }
-    code{
-      color:#d9f7ff;
-      background:#0d1427;
-      border:1px solid var(--line);
-      padding:2px 6px;
-      border-radius:6px;
+    .count b{
+      color:var(--text);
+      font-size:22px;
+      margin-right:5px;
     }
-    @media(max-width:800px){
-      .hero{grid-template-columns:1fr;padding-top:64px}
+    .toolbar{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin:30px 0 12px;
+    }
+    .search{
+      flex:1 1 320px;
+      position:relative;
+    }
+    .search input{
+      width:100%;
+      border:1px solid var(--line);
+      background:var(--surface);
+      border-radius:14px;
+      padding:14px 16px 14px 44px;
+      font:inherit;
+      outline:none;
+      box-shadow:0 4px 18px rgba(28,39,65,.04);
+    }
+    .search input:focus{
+      border-color:#aebdf8;
+      box-shadow:0 0 0 4px rgba(68,104,232,.08);
+    }
+    .search span{
+      position:absolute;
+      left:16px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#94a3b8;
+      pointer-events:none;
+    }
+    .filters{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .filter{
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:#5f6b80;
+      border-radius:999px;
+      padding:10px 14px;
+      cursor:pointer;
+      font-size:14px;
+    }
+    .filter.active{
+      color:var(--accent);
+      border-color:#cbd5ff;
+      background:var(--accent-soft);
+      font-weight:700;
+    }
+    main{padding:12px 0 70px}
+    .section{
+      margin-top:36px;
+    }
+    .section-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:14px;
+    }
+    .section h2{
+      margin:0;
+      font-size:21px;
+      letter-spacing:-.3px;
+    }
+    .section-note{
+      color:var(--muted);
+      font-size:13px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:16px;
+    }
+    .tool{
+      display:flex;
+      flex-direction:column;
+      min-height:188px;
+      padding:20px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:linear-gradient(180deg,var(--surface),var(--surface2));
+      box-shadow:0 7px 24px rgba(28,39,65,.05);
+      text-decoration:none;
+      transition:.18s ease;
+    }
+    .tool:hover{
+      transform:translateY(-3px);
+      border-color:#cfd7f7;
+      box-shadow:0 14px 34px rgba(28,39,65,.10);
+    }
+    .tool-top{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .icon{
+      width:42px;height:42px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-weight:850;
+      font-size:14px;
+    }
+    .external{
+      color:#a0aec0;
+      font-size:18px;
+    }
+    .tool h3{
+      margin:16px 0 7px;
+      font-size:18px;
+    }
+    .tool p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:14px;
+    }
+    .tags{
+      margin-top:auto;
+      padding-top:16px;
+      display:flex;
+      gap:7px;
+      flex-wrap:wrap;
+    }
+    .tag{
+      font-size:12px;
+      color:#667085;
+      background:#f1f4f9;
+      border-radius:999px;
+      padding:5px 8px;
+    }
+    .empty{
+      display:none;
+      margin-top:28px;
+      padding:34px;
+      text-align:center;
+      border:1px dashed #cdd5e3;
+      border-radius:18px;
+      color:var(--muted);
+      background:rgba(255,255,255,.5);
+    }
+    footer{
+      border-top:1px solid var(--line);
+      padding:24px 0 38px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.7;
+    }
+    @media(max-width:900px){
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:620px){
+      .wrap{width:min(100% - 22px,1180px)}
+      header{padding-top:28px}
+      .topline{display:block}
+      .count{display:inline-block;margin-top:18px}
       .grid{grid-template-columns:1fr}
-      header{align-items:flex-start;gap:12px;flex-direction:column}
+      .tool{min-height:170px}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">GitHub Pages Demo</div>
-      <div class="badge">免费静态网站 · 无阿里云服务器参与</div>
-    </header>
-
-    <section class="hero">
-      <div>
-        <h1>这个网页，<br><span>直接由 GitHub 提供。</span></h1>
-        <p class="lead">
-          这是一个真实的 GitHub Pages 静态网站测试页。页面文件保存在 GitHub 仓库里，
-          不经过你的 Ubuntu、Nginx 或 <code>/pinzhigao</code> 目录。
-        </p>
+      <div class="topline">
+        <div>
+          <div class="eyebrow">My Toolbox</div>
+          <h1>我的工具收藏夹</h1>
+          <p class="subtitle">把平时用得上的网站和工具集中放在这里，按功能分类。以后新发现的实用工具继续往这里加，省得下次再到处找。</p>
+        </div>
+        <div class="count"><b id="toolCount">3</b> 个工具</div>
       </div>
 
-      <div class="card">
-        <h2>访问链路</h2>
-        <div class="flow">
-          <div class="step">你的浏览器</div>
-          <div class="arrow">↓</div>
-          <div class="step">GitHub Pages</div>
-          <div class="arrow">↓</div>
-          <div class="step">仓库里的 index.html</div>
+      <div class="toolbar">
+        <div class="search">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="搜索工具名称 功能或关键词">
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">全部</button>
+          <button class="filter" data-filter="voice">AI 配音</button>
+          <button class="filter" data-filter="dev">开发建站</button>
         </div>
       </div>
-    </section>
+    </header>
 
-    <section class="grid">
-      <div class="feature">
-        <b>静态托管</b>
-        <p>HTML、CSS、JavaScript 和图片可以直接对外访问。</p>
-      </div>
-      <div class="feature">
-        <b>自动 HTTPS</b>
-        <p>GitHub Pages 默认提供 HTTPS，不需要自己配置 Nginx 证书。</p>
-      </div>
-      <div class="feature">
-        <b>版本记录</b>
-        <p>每次修改都可以保留 Commit 历史，出问题时方便回退。</p>
-      </div>
-    </section>
+    <main>
+      <section class="section tool-section" data-section="voice">
+        <div class="section-head">
+          <h2>AI 配音与音频</h2>
+          <span class="section-note">文字转语音 视频配音</span>
+        </div>
+        <div class="grid">
+          <a class="tool" href="https://elevenlabs.io/" target="_blank" rel="noopener" data-category="voice" data-search="ElevenLabs 文字转语音 AI配音 视频配音 女声 voice text to speech">
+            <div class="tool-top">
+              <div class="icon">EL</div>
+              <div class="external">↗</div>
+            </div>
+            <h3>ElevenLabs</h3>
+            <p>自然度比较高的 AI 文字转语音工具，适合英文口播 视频配音 多语言语音生成。</p>
+            <div class="tags"><span class="tag">文字转语音</span><span class="tag">AI 配音</span></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section tool-section" data-section="dev">
+        <div class="section-head">
+          <h2>开发与网站</h2>
+          <span class="section-note">代码管理 静态网页</span>
+        </div>
+        <div class="grid">
+          <a class="tool" href="https://github.com/" target="_blank" rel="noopener" data-category="dev" data-search="GitHub 代码 仓库 版本管理 Actions 自动部署 repository git">
+            <div class="tool-top">
+              <div class="icon">GH</div>
+              <div class="external">↗</div>
+            </div>
+            <h3>GitHub</h3>
+            <p>保存代码和网页文件，记录历史版本，也可以通过 Actions 自动测试和部署网站。</p>
+            <div class="tags"><span class="tag">代码仓库</span><span class="tag">自动部署</span></div>
+          </a>
+
+          <a class="tool" href="https://pages.github.com/" target="_blank" rel="noopener" data-category="dev" data-search="GitHub Pages 静态网页 免费托管 网站 HTML CSS JavaScript">
+            <div class="tool-top">
+              <div class="icon">GP</div>
+              <div class="external">↗</div>
+            </div>
+            <h3>GitHub Pages</h3>
+            <p>GitHub 提供的免费静态网页托管服务，适合说明页 项目页 个人主页和文档站。</p>
+            <div class="tags"><span class="tag">免费静态站</span><span class="tag">HTTPS</span></div>
+          </a>
+        </div>
+      </section>
+
+      <div class="empty" id="emptyState">没有找到匹配的工具</div>
+    </main>
 
     <footer>
-      zhangyixinovo-lang.github.io · GitHub Pages demonstration
+      <div>工具收藏夹 · 持续更新</div>
+      <div>最后更新 2026-09-29</div>
     </footer>
   </div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const buttons = [...document.querySelectorAll('.filter')];
+    const tools = [...document.querySelectorAll('.tool')];
+    const sections = [...document.querySelectorAll('.tool-section')];
+    const emptyState = document.getElementById('emptyState');
+    const toolCount = document.getElementById('toolCount');
+    let activeFilter = 'all';
+
+    function refresh(){
+      const q = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+
+      tools.forEach(tool => {
+        const categoryMatch = activeFilter === 'all' || tool.dataset.category === activeFilter;
+        const textMatch = !q || tool.dataset.search.toLowerCase().includes(q) || tool.textContent.toLowerCase().includes(q);
+        const show = categoryMatch && textMatch;
+        tool.style.display = show ? '' : 'none';
+        if(show) visible++;
+      });
+
+      sections.forEach(section => {
+        const anyVisible = [...section.querySelectorAll('.tool')].some(tool => tool.style.display !== 'none');
+        section.style.display = anyVisible ? '' : 'none';
+      });
+
+      toolCount.textContent = visible;
+      emptyState.style.display = visible ? 'none' : 'block';
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        activeFilter = button.dataset.filter;
+        refresh();
+      });
+    });
+
+    searchInput.addEventListener('input', refresh);
+    refresh();
+  </script>
 </body>
 </html>
