@@ -1,0 +1,13 @@
+interface:
+  display_name: Bag Temu Listing
+  short_description: 包包上架先确认尺寸背法每色生成五至十二张图并导出店小秘模板
+  default_prompt: 使用 $bag-temu-listing 处理这些包包图片 先确认实际尺寸和可多选的背法 再生成商品图并导出店小秘Excel
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

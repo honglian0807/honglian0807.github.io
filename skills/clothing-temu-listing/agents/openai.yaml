@@ -1,0 +1,14 @@
+interface:
+  display_name: Clothing Temu Listing
+  short_description: Prepare clothing Temu listings and import sheets
+  default_prompt: Use this workflow to prepare approved clothing images, SKUs, ImgBB
+    links, descriptions, and a final Temu import Excel.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
