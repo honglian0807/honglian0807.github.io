@@ -231,6 +231,10 @@
       font-size:13px;
       line-height:1.7;
     }
+    .skill-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .featured-tool{border-color:#cbd5ff;background:linear-gradient(180deg,#eef2ff,var(--surface))}
+    .skill-downloads{display:flex;gap:12px 24px;flex-wrap:wrap;font-size:14px}
+    .skill-downloads a{color:var(--accent);text-underline-offset:3px}
     @media(max-width:900px){
       .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
@@ -253,7 +257,7 @@
           <h1>红莲工具收藏夹</h1>
           <p class="subtitle">把平时用得上的网站和工具集中放在这里，按功能分类。以后新发现的实用工具继续往这里加，省得下次再到处找。</p>
         </div>
-        <div class="count"><b id="toolCount">3</b> 个工具</div>
+        <div class="count"><b id="toolCount">11</b> 个工具</div>
       </div>
 
       <div class="toolbar">
@@ -263,6 +267,7 @@
         </div>
         <div class="filters">
   <button class="filter active" data-filter="all">全部</button>
+  <button class="filter" data-filter="skills">重点收藏</button>
   <button class="filter" data-filter="voice">AI 配音</button>
   <button class="filter" data-filter="ecommerce">电商工具</button>
   <button class="filter" data-filter="dev">开发建站</button>
@@ -271,6 +276,56 @@
     </header>
 
     <main>
+      <section class="section tool-section" data-section="skills">
+        <div class="section-head">
+          <h2>★ 我的重点收藏</h2>
+          <span class="section-note">亲手打磨的上架工作流</span>
+        </div>
+        <div class="grid skill-grid">
+    <a class="tool featured-tool"
+       href="https://github.com/honglian0807/honglian0807.github.io/tree/main/skills/clothing-temu-listing"
+       target="_blank"
+       rel="noopener"
+       data-category="skills"
+       data-search="服装上架 Skill Clothing Temu Listing clothing-temu-listing 我的技能 心血 重点收藏 Temu 店小秘 ImgBB Excel 五张商品图">
+      <div class="tool-top">
+        <div class="icon">CL</div>
+        <div class="external">↗</div>
+      </div>
+      <h3>服装上架 Skill</h3>
+      <p>我的服装上架工作流：每色五张独立商品图，确认图片后整理货号 尺码 SKU 和店小秘 Excel。</p>
+      <div class="tags">
+        <span class="tag">重点收藏</span>
+        <span class="tag">服装上架</span>
+        <span class="tag">完整备份</span>
+      </div>
+    </a>
+
+    <a class="tool featured-tool"
+       href="https://github.com/honglian0807/honglian0807.github.io/tree/main/skills/bag-temu-listing"
+       target="_blank"
+       rel="noopener"
+       data-category="skills"
+       data-search="包包上架 Skill Bag Temu Listing bag-temu-listing 我的技能 心血 重点收藏 Temu 店小秘 背法 尺寸 手提 斜挎 Excel">
+      <div class="tool-top">
+        <div class="icon">BG</div>
+        <div class="external">↗</div>
+      </div>
+      <h3>包包上架 Skill</h3>
+      <p>我的包包上架工作流：先确认实际尺寸和多种背法，再制作每色五至十二张商品图，导出店小秘 Excel。</p>
+      <div class="tags">
+        <span class="tag">重点收藏</span>
+        <span class="tag">包包上架</span>
+        <span class="tag">完整备份</span>
+      </div>
+    </a>
+        </div>
+        <p class="section-note">点击卡片查看技能源码，在 ChatGPT 中选择对应 Skill 使用。备份日期 2026-10-12</p>
+        <div class="skill-downloads">
+          <a href="downloads/clothing-temu-listing.zip" download>下载服装 Skill 完整备份</a>
+          <a href="downloads/bag-temu-listing.zip" download>下载包包 Skill 完整备份</a>
+        </div>
+      </section>
       <section class="section tool-section" data-section="voice">
         <div class="section-head">
           <h2>AI 配音与音频</h2>
@@ -350,6 +405,60 @@
       </div>
     </a>
 
+    <a class="tool"
+       href="https://imgbb.com/"
+       target="_blank"
+       rel="noopener"
+       data-category="ecommerce"
+       data-search="ImgBB 图片上传 图床 图片托管 商品图 直链 image hosting upload">
+      <div class="tool-top">
+        <div class="icon">IB</div>
+        <div class="external">↗</div>
+      </div>
+      <h3>ImgBB</h3>
+      <p>上传商品图片并获取图片直链，方便在商品描述和批量上架表格中使用。</p>
+      <div class="tags">
+        <span class="tag">图片上传</span>
+        <span class="tag">图片直链</span>
+      </div>
+    </a>
+
+    <a class="tool"
+       href="https://www.dianxiaomi.com/"
+       target="_blank"
+       rel="noopener"
+       data-category="ecommerce"
+       data-search="店小秘 Dianxiaomi Storekeeper ERP 批量上架 Excel 产品刊登 商品 订单 库存 Temu">
+      <div class="tool-top">
+        <div class="icon">DX</div>
+        <div class="external">↗</div>
+      </div>
+      <h3>店小秘</h3>
+      <p>跨境电商 ERP，集中处理产品刊登 订单和库存，方便管理日常上架工作。</p>
+      <div class="tags">
+        <span class="tag">ERP</span>
+        <span class="tag">批量上架</span>
+      </div>
+    </a>
+
+    <a class="tool"
+       href="https://global-selling.mercadolibre.com/"
+       target="_blank"
+       rel="noopener"
+       data-category="ecommerce"
+       data-search="MercadoLibre Mercado Libre Global Selling 美客多 拉美 跨境电商 卖家后台 商品 订单">
+      <div class="tool-top">
+        <div class="icon">ML</div>
+        <div class="external">↗</div>
+      </div>
+      <h3>MercadoLibre 美客多</h3>
+      <p>美客多 Global Selling 官方入口，面向跨境卖家管理商品 订单和拉美市场业务。</p>
+      <div class="tags">
+        <span class="tag">美客多</span>
+        <span class="tag">Global Selling</span>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -386,7 +495,7 @@
 
     <footer>
       <div>工具收藏夹 · 持续更新</div>
-      <div>最后更新 2026-09-29</div>
+      <div>最后更新 2026-10-12</div>
     </footer>
   </div>
 
