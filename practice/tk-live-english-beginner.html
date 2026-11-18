@@ -4,7 +4,7 @@
 </style></head><body><div class="wrap">
 <div class="hero"><h1>TK英文直播话术背诵</h1><p>来源：你提供的抖音视频「新手播TK不知道说什么？那就看这篇！」</p><p>已从你上传的屏幕录制中整理出适合新手直接背诵的英文直播话术。</p></div>
 <div class="note">说明：以下英文根据视频画面中出现的英文字幕整理。个别字幕存在自动识别/画面遮挡造成的轻微误差，因此我只保留了能明确辨认、适合学习的表达，没有把无法确认的句子硬补进去。</div>
-<div class="summary"><b>视频内容重点</b><ul><li>开场先介绍新品、优惠和专属折扣，引导观众点击黄色购物车。</li><li>通过评论、点赞、关注、分享提高直播间互动，并提醒关注后获得开播通知。</li><li>介绍产品时强调设计、细节、材质、日常使用场景和性价比。</li><li>成交阶段重点使用限时优惠、库存紧张、优惠券、赠品等促单话术。</li><li>最后补充发货时间、物流单号、退换货和售后处理方式。</li></ul></div>
+<div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:12px;margin:12px 0;font-size:13px;line-height:1.7"><b>如果点播放没有声音：</b>请用手机 Safari 或 Chrome 打开本网页，不要在抖音/微信/ChatGPT 内置浏览器里打开；首次使用先点一次“播放”。</div><div class="summary"><b>视频内容重点</b><ul><li>开场先介绍新品、优惠和专属折扣，引导观众点击黄色购物车。</li><li>通过评论、点赞、关注、分享提高直播间互动，并提醒关注后获得开播通知。</li><li>介绍产品时强调设计、细节、材质、日常使用场景和性价比。</li><li>成交阶段重点使用限时优惠、库存紧张、优惠券、赠品等促单话术。</li><li>最后补充发货时间、物流单号、退换货和售后处理方式。</li></ul></div>
 <div class="toolbar"><input id="q" placeholder="搜索英文或中文关键词"></div>
 <div id="app"></div>
 </div>
@@ -54,8 +54,26 @@ const data=[
 ["结束","Thanks for your support. See you guys tomorrow. Bye-bye.","θæŋks fər jʊr səˈpɔːrt siː ju ɡaɪz təˈmɑːroʊ baɪ baɪ.","感谢大家的支持，明天见，拜拜。"]
 ];
 const app=document.getElementById('app'),q=document.getElementById('q');
-let rate=0.88;
-function speak(t){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=rate;speechSynthesis.speak(u)}
-function render(){const key=q.value.trim().toLowerCase();let last='';let html='';data.forEach((d,i)=>{if(key&&!d.join(' ').toLowerCase().includes(key))return;if(d[0]!==last){last=d[0];html+='<div class="sec">'+last+'</div>'}html+=`<div class="card"><div class="en">${d[1]}</div><div class="ipa">${d[2]}</div><div class="zh">${d[3]}</div><div class="row"><button class="play" onclick="speak(${JSON.stringify(d[1])})">🔊 播放美式发音</button><button class="slow" onclick="rate=.68;speak(${JSON.stringify(d[1])});setTimeout(()=>rate=.88,100)">慢速</button></div></div>`});app.innerHTML=html||'<div class="card">没有找到匹配内容</div>'}
-q.addEventListener('input',render);render();
+let voices=[];
+function loadVoices(){ if('speechSynthesis' in window) voices=window.speechSynthesis.getVoices(); }
+if('speechSynthesis' in window){ loadVoices(); window.speechSynthesis.onvoiceschanged=loadVoices; }
+function speak(text,speed){
+  if(!('speechSynthesis' in window)){ alert('当前浏览器不支持朗读，请用 Safari 或 Chrome 打开'); return; }
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US'; u.rate=speed||0.88; u.pitch=1;
+  const us=voices.filter(v=>/^en-US$/i.test(v.lang));
+  if(us.length) u.voice=us[0];
+  window.speechSynthesis.cancel();
+  setTimeout(()=>window.speechSynthesis.speak(u),100);
+}
+function render(){
+  const key=(q.value||'').trim().toLowerCase(); let last='',out='';
+  data.forEach(d=>{
+    if(key&&!d.join(' ').toLowerCase().includes(key)) return;
+    if(d[0]!==last){last=d[0];out+='<div class="sec">'+d[0]+'</div>';}
+    out+='<div class="card"><div class="en">'+d[1]+'</div><div class="ipa">'+d[2]+'</div><div class="zh">'+d[3]+'</div><div class="actions"><button class="play" onclick="speak('+JSON.stringify(d[1])+',0.88)">🔊 播放美式发音</button><button class="slow" onclick="speak('+JSON.stringify(d[1])+',0.68)">🐢 慢速</button></div></div>';
+  });
+  app.innerHTML=out||'<div class="card">没有找到匹配内容</div>';
+}
+q.addEventListener('input',render); render();
 </script></body></html>
