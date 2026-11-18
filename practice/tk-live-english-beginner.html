@@ -1,0 +1,61 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>TK英文直播话术背诵｜新手直播</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f4f6f8;color:#17202a}.wrap{max-width:760px;margin:auto;padding:14px}.hero{background:#111827;color:#fff;border-radius:20px;padding:22px 18px;margin-bottom:14px}.hero h1{margin:0 0 8px;font-size:24px}.hero p{margin:6px 0;color:#d1d5db;line-height:1.6}.note{background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:12px 14px;line-height:1.6;font-size:13px;margin-bottom:14px}.toolbar{position:sticky;top:0;z-index:5;background:#f4f6f8;padding:8px 0}.toolbar input{width:100%;padding:13px 14px;border:1px solid #d1d5db;border-radius:12px;font-size:16px}.sec{font-weight:800;font-size:18px;margin:20px 4px 9px}.card{background:#fff;border-radius:16px;padding:16px;margin:10px 0;box-shadow:0 2px 10px #0000000b}.en{font-size:20px;font-weight:700;line-height:1.5}.ipa{font-size:14px;color:#64748b;margin:7px 0;line-height:1.6}.zh{font-size:15px;line-height:1.65;color:#334155}.row{display:flex;gap:8px;margin-top:12px}.play{flex:1;border:0;border-radius:11px;padding:12px;background:#111827;color:#fff;font-size:15px;font-weight:700}.slow{border:1px solid #d1d5db;background:#fff;border-radius:11px;padding:12px 14px;font-size:14px}.small{color:#64748b;font-size:12px;margin-top:7px}.summary{background:#fff;border-radius:16px;padding:16px;line-height:1.75}.summary li{margin:7px 0}
+</style></head><body><div class="wrap">
+<div class="hero"><h1>TK英文直播话术背诵</h1><p>来源：你提供的抖音视频「新手播TK不知道说什么？那就看这篇！」</p><p>已从你上传的屏幕录制中整理出适合新手直接背诵的英文直播话术。</p></div>
+<div class="note">说明：以下英文根据视频画面中出现的英文字幕整理。个别字幕存在自动识别/画面遮挡造成的轻微误差，因此我只保留了能明确辨认、适合学习的表达，没有把无法确认的句子硬补进去。</div>
+<div class="summary"><b>视频内容重点</b><ul><li>开场先介绍新品、优惠和专属折扣，引导观众点击黄色购物车。</li><li>通过评论、点赞、关注、分享提高直播间互动，并提醒关注后获得开播通知。</li><li>介绍产品时强调设计、细节、材质、日常使用场景和性价比。</li><li>成交阶段重点使用限时优惠、库存紧张、优惠券、赠品等促单话术。</li><li>最后补充发货时间、物流单号、退换货和售后处理方式。</li></ul></div>
+<div class="toolbar"><input id="q" placeholder="搜索英文或中文关键词"></div>
+<div id="app"></div>
+</div>
+<script>
+const data=[
+["开场欢迎","Today, we've got some very amazing new arrivals.","təˈdeɪ wiːv ɡɑːt səm ˈvɛri əˈmeɪzɪŋ nuː əˈraɪvəlz.","今天我们有一些非常棒的新品。"],
+["开场优惠","Today, we've got some very amazing exclusive deals and a special discount for you guys.","təˈdeɪ wiːv ɡɑːt səm ˈvɛri əˈmeɪzɪŋ ɪkˈskluːsɪv diːlz ænd ə ˈspɛʃəl ˈdɪskaʊnt fər ju ɡaɪz.","今天有非常棒的专属优惠，还有给大家的特别折扣。"],
+["购物车","Go ahead and check our yellow shopping cart below.","ɡoʊ əˈhɛd ænd tʃɛk aʊər ˈjɛloʊ ˈʃɑːpɪŋ kɑːrt bɪˈloʊ.","大家可以直接点击下面的黄色购物车看看。"],
+["互动评论","Drop a comment and let me know which one you like.","drɑːp ə ˈkɑːmɛnt ænd lɛt mi noʊ wɪtʃ wʌn ju laɪk.","评论告诉我你喜欢哪一个。"],
+["逐个展示","I will show you guys each one by one.","aɪ wɪl ʃoʊ ju ɡaɪz iːtʃ wʌn baɪ wʌn.","我会一个一个给大家展示。"],
+["点赞","If you're enjoying the vibe, just tap the screen and show me some love.","ɪf jʊr ɪnˈdʒɔɪɪŋ ðə vaɪb dʒʌst tæp ðə skriːn ænd ʃoʊ mi səm lʌv.","如果你喜欢直播间的氛围，就点点屏幕支持一下。"],
+["点赞目标","Please help me get the likes button to five thousand.","pliːz hɛlp mi ɡɛt ðə laɪks ˈbʌtən tə faɪv ˈθaʊzənd.","帮我把点赞数冲到5000。"],
+["新观众","If this is your first time joining, don't forget to hit the following button.","ɪf ðɪs ɪz jʊr fɜːrst taɪm ˈdʒɔɪnɪŋ doʊnt fərˈɡɛt tə hɪt ðə ˈfɑːloʊɪŋ ˈbʌtən.","如果你第一次来到这里，别忘了点击关注。"],
+["关注福利","We drop new deals every single day.","wi drɑːp nuː diːlz ˈɛvri ˈsɪŋɡəl deɪ.","我们每天都会推出新的优惠。"],
+["开播提醒","You can get notified every single time we go live.","ju kæn ɡɛt ˈnoʊtɪfaɪd ˈɛvri ˈsɪŋɡəl taɪm wi ɡoʊ laɪv.","每次我们开播，你都可以收到通知。"],
+["欢迎新进观众","Welcome, everyone who just joined.","ˈwɛlkəm ˈɛvriwʌn hu dʒʌst dʒɔɪnd.","欢迎刚刚进来的每一位。"],
+["留人","Stick around and stay tuned.","stɪk əˈraʊnd ænd steɪ tuːnd.","别走开，继续关注。"],
+["评论互动","Drop a comment and let me know where you're from.","drɑːp ə ˈkɑːmɛnt ænd lɛt mi noʊ wɛr jʊr frəm.","评论告诉我你来自哪里。"],
+["产品感受","Let me know how you feel about this item.","lɛt mi noʊ haʊ ju fiːl əˈbaʊt ðɪs ˈaɪtəm.","告诉我你对这件商品的感受。"],
+["分享","You can also share this stream with your friends.","ju kən ˈɔːlsoʊ ʃɛr ðɪs striːm wɪð jʊr frɛndz.","你也可以把这场直播分享给朋友。"],
+["爆款","Our next product is our best seller.","aʊər nɛkst ˈprɑːdʌkt ɪz aʊər bɛst ˈsɛlər.","我们下一个产品是我们的畅销款。"],
+["设计","Look at this stunning design.","lʊk æt ðɪs ˈstʌnɪŋ dɪˈzaɪn.","看看这个非常惊艳的设计。"],
+["细节","Great details and premium hand feel.","ɡreɪt ˈdiːteɪlz ænd ˈpriːmiəm hænd fiːl.","细节很好，手感也很高级。"],
+["日常使用","It's super handy for daily use.","ɪts ˈsuːpər ˈhændi fər ˈdeɪli juːs.","它非常方便，适合日常使用。"],
+["居家出行","It is also perfect for home and on the go.","ɪt ɪz ˈɔːlsoʊ ˈpɜːrfɪkt fər hoʊm ænd ɑːn ðə ɡoʊ.","在家使用或者外出携带都很合适。"],
+["材质","We use high-quality materials.","wi juːz haɪ ˈkwɑːləti məˈtɪriəlz.","我们使用高品质材料。"],
+["价格对比","You know, similar items cost around one hundred dollars.","ju noʊ ˈsɪmələr ˈaɪtəmz kɔːst əˈraʊnd wʌn ˈhʌndrəd ˈdɑːlərz.","类似产品的价格大约是100美元。"],
+["直播价格","Today, on my live, it's only forty-nine dollars.","təˈdeɪ ɑːn maɪ laɪv ɪts ˈoʊnli ˌfɔːrtiˈnaɪn ˈdɑːlərz.","今天直播间只要49美元。"],
+["展示产品","Let me show you guys how it works.","lɛt mi ʃoʊ ju ɡaɪz haʊ ɪt wɜːrks.","我给大家展示一下它怎么使用。"],
+["原价","Normally, the retail for this one is around one hundred dollars.","ˈnɔːrməli ðə ˈriːteɪl fər ðɪs wʌn ɪz əˈraʊnd wʌn ˈhʌndrəd ˈdɑːlərz.","这款正常零售价大约100美元。"],
+["直播专属价","Today's live exclusive deal is only forty-nine dollars.","təˈdeɪz laɪv ɪkˈskluːsɪv diːl ɪz ˈoʊnli ˌfɔːrtiˈnaɪn ˈdɑːlərz.","今天直播专属优惠价只要49美元。"],
+["折扣","Oh my God, fifty percent off!","oʊ maɪ ɡɑːd ˈfɪfti pərˈsɛnt ɔːf.","天哪，五折！"],
+["限时","This price only works during the livestream.","ðɪs praɪs ˈoʊnli wɜːrks ˈdjʊrɪŋ ðə ˈlaɪvstriːm.","这个价格只在直播期间有效。"],
+["涨价提醒","The price will rise after we go offline.","ðə praɪs wɪl raɪz ˈæftər wi ɡoʊ ˈɔːflaɪn.","下播之后价格会恢复上涨。"],
+["库存紧张","Only twenty pieces left in stock.","ˈoʊnli ˈtwɛnti ˈpiːsɪz lɛft ɪn stɑːk.","库存只剩20件。"],
+["下单","Please click the yellow shopping cart below.","pliːz klɪk ðə ˈjɛloʊ ˈʃɑːpɪŋ kɑːrt bɪˈloʊ.","请点击下面的黄色购物车。"],
+["下单链接","Click the link and place your order.","klɪk ðə lɪŋk ænd pleɪs jʊr ˈɔːrdər.","点击链接下单。"],
+["优惠券","Grab the top-left coupon first.","ɡræb ðə tɑːp lɛft ˈkuːpɑːn fɜːrst.","先领取左上角的优惠券。"],
+["优惠后价格","The final price after the coupon is around thirty-nine dollars.","ðə ˈfaɪnəl praɪs ˈæftər ðə ˈkuːpɑːn ɪz əˈraʊnd ˌθɜːrtiˈnaɪn ˈdɑːlərz.","使用优惠券后最终价格大约39美元。"],
+["限时赠品","Order now and get a free limited-time gift.","ˈɔːrdər naʊ ænd ɡɛt ə friː ˈlɪmɪtɪd taɪm ɡɪft.","现在下单即可获得限时免费赠品。"],
+["催单","Don't hesitate. The deal won't come again.","doʊnt ˈhɛzɪteɪt ðə diːl woʊnt kʌm əˈɡɛn.","不要犹豫，这个优惠不会再来。"],
+["发货","Shipping time takes around one week.","ˈʃɪpɪŋ taɪm teɪks əˈraʊnd wʌn wiːk.","发货时间大约一周。"],
+["物流单号","You will receive a tracking number after the shipment.","ju wɪl rɪˈsiːv ə ˈtrækɪŋ ˈnʌmbər ˈæftər ðə ˈʃɪpmənt.","发货后你会收到物流追踪单号。"],
+["售后","We accept returns only for shipping-damaged goods.","wi əkˈsɛpt rɪˈtɜːrnz ˈoʊnli fər ˈʃɪpɪŋ ˈdæmɪdʒd ɡʊdz.","我们只接受因运输损坏造成的商品退货。"],
+["客服","DM customer service for the quality issue.","diː ɛm ˈkʌstəmər ˈsɜːrvɪs fər ðə ˈkwɑːləti ˈɪʃuː.","如果有质量问题，请私信客服。"],
+["补发","We will arrange the replacement.","wi wɪl əˈreɪndʒ ðə rɪˈpleɪsmənt.","我们会安排补发/更换。"],
+["结束","Thanks for your support. See you guys tomorrow. Bye-bye.","θæŋks fər jʊr səˈpɔːrt siː ju ɡaɪz təˈmɑːroʊ baɪ baɪ.","感谢大家的支持，明天见，拜拜。"]
+];
+const app=document.getElementById('app'),q=document.getElementById('q');
+let rate=0.88;
+function speak(t){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=rate;speechSynthesis.speak(u)}
+function render(){const key=q.value.trim().toLowerCase();let last='';let html='';data.forEach((d,i)=>{if(key&&!d.join(' ').toLowerCase().includes(key))return;if(d[0]!==last){last=d[0];html+='<div class="sec">'+last+'</div>'}html+=`<div class="card"><div class="en">${d[1]}</div><div class="ipa">${d[2]}</div><div class="zh">${d[3]}</div><div class="row"><button class="play" onclick="speak(${JSON.stringify(d[1])})">🔊 播放美式发音</button><button class="slow" onclick="rate=.68;speak(${JSON.stringify(d[1])});setTimeout(()=>rate=.88,100)">慢速</button></div></div>`});app.innerHTML=html||'<div class="card">没有找到匹配内容</div>'}
+q.addEventListener('input',render);render();
+</script></body></html>
